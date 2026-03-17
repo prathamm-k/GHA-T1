@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - run: print("Hello world in Python")
+        shell: python
   hello-world-js:
     runs-on: ubuntu-22.04
     steps:
