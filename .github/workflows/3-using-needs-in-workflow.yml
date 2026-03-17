@@ -1,0 +1,22 @@
+name: using "needs"
+
+on:
+    workflow_dispatch:
+
+jobs:
+    print-in-bash:
+        runs-on: ubuntu-24.04
+        steps:
+            - run: echo "Hello, World!"
+    
+    print-in-python:
+        runs-on: ubuntu-24.04
+        needs: print-in-bash
+        steps:
+            - run: print("Hello, World!")
+              shell: python
+
+    print-in-shell:
+        runs-on: ubuntu-24.04
+        steps:
+            - run: echo "Hello, World! x2"
