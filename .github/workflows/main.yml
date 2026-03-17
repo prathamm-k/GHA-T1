@@ -1,0 +1,20 @@
+name: three jobs workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello-world-bash:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo "Hello Fking world in bash"
+  hello-world-python:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: print("Hello world in Python")
+  hello-world-js:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: "Hello world in javascipt"
